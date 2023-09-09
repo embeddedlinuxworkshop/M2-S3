@@ -1,12 +1,9 @@
 
 
-## The Linux kernel
-### Kernel
+## The Linux kernel Raspberrypi
+
 
 source: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
-
-
-
 
 
 
