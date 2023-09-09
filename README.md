@@ -3,7 +3,7 @@
 ## The Linux kernel
 ### Kernel
 
-source: [[!https://www.raspberrypi.com/documentation/computers/linux_kernel.html]]
+source: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
 
 The Raspberry Pi kernel is stored in GitHub and can be viewed at github.com/raspberrypi/linux; it follows behind the main Linux kernel. The main Linux kernel is continuously updating; we take long-term releases of the kernel, which are mentioned on the front page, and integrate the changes into the Raspberry Pi kernel. We then create a 'next' branch which contains an unstable port of the kernel; after extensive testing and discussion, we push this to the main branch.
 Updating your Kernel
