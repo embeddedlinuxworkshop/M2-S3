@@ -97,7 +97,7 @@ make -j 4 ARCH=<target> CROSS_COMPILE=`prefix`
 c. zImage: compressed.
 
 ```
-make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` zImage
+make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` Image
 ```
 
 d. uImage: zImage + uBoot header.
@@ -121,7 +121,14 @@ dtc <name>.dts -o <name>.dtb # convert it into binary.
 ### 7. Booting kernel on Qemu
 
 ```
-qemu-system-arm -m 256M -nographic -M versatilepb -kernel \ <image>
-
--append "console=ttyAMA0,115200" -dtb <Device tree binary>
+qemu-system-aarch64 \
+    -M raspi3b \
+    -cpu cortex-a72 \
+    -append "rw earlyprintk loglevel=8 console=ttyAMA0,115200" \
+    -kernel u-boot.bin \
+    -m 1G -smp 4 \
+    -serial stdio \
+    -usb -device usb-mouse -device usb-kbd \
+        -device usb-net,netdev=net0 \
+        -netdev user,id=net0,hostfwd=tcp::5555-:22 \
 ```
