@@ -117,4 +117,11 @@ b. compile device tree.
 dtc <name>.dts -o <name>.dtb # convert it into binary.
 
 ```
+---------------------------------------------------------------------------------------------
+### 7. Booting kernel on Qemu
 
+```
+qemu-system-arm -m 256M -nographic -M versatilepb -kernel \ <image>
+
+-append "console=ttyAMA0,115200" -dtb <Device tree binary>
+```
