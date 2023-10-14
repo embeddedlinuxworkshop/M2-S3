@@ -125,10 +125,11 @@ qemu-system-aarch64 \
     -M raspi3b \
     -cpu cortex-a72 \
     -append "rw earlyprintk loglevel=8 console=ttyAMA0,115200" \
-    -kernel u-boot.bin \
+    -kernel <Image> \
+    -dtb <dtb>.dtb \
     -m 1G -smp 4 \
     -serial stdio \
     -usb -device usb-mouse -device usb-kbd \
         -device usb-net,netdev=net0 \
-        -netdev user,id=net0,hostfwd=tcp::5555-:22 \
+        -netdev user,id=net0,hostfwd=tcp::5555-:22
 ```
