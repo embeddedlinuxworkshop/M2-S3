@@ -100,7 +100,7 @@ make -j 4 ARCH=<target> CROSS_COMPILE=`prefix`
 c. zImage: compressed.
 
 ```
-make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` Image
+make -j4 ARCH=<target> CROSS_COMPILE=`prefix` Image
 
 # output
 <linux_directory>/arch/<target>/boot
@@ -109,7 +109,7 @@ make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` Image
 d. uImage: zImage + uBoot header.
 
 ```
-make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` LOADADDR=0x80008000 uImage
+make -j4 ARCH=<target> CROSS_COMPILE=`prefix` LOADADDR=0x80008000 uImage
 
 # output
 <linux_directory>/arch/<target>/boot
