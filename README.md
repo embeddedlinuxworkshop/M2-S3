@@ -92,18 +92,27 @@ b. vmLinux: elf
 
 ```
 make -j 4 ARCH=<target> CROSS_COMPILE=`prefix`
+
+# output
+> main directory for Linux.
 ```
 
 c. zImage: compressed.
 
 ```
 make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` Image
+
+# output
+<linux_directory>/arch/<target>/boot
 ```
 
 d. uImage: zImage + uBoot header.
 
 ```
 make -j 4 ARCH=<target> CROSS_COMPILE=`prefix` LOADADDR=0x80008000 uImage
+
+# output
+<linux_directory>/arch/<target>/boot
 ```
 ---------------------------------------------------------------------------------------------
 ### 6. Compiling Device tree.
